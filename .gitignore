@@ -1,1 +1,5 @@
 .DS_Store
+Podfile.lock
+Pods/
+SwiftIAPDemo.xcodeproj/xcuserdata/goubowen.xcuserdatad/xcdebugger/
+SwiftIAPDemo.xcworkspace/
