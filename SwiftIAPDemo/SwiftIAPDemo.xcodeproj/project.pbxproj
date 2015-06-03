@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5E5123E4C58A0BD2E878A13B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2B31D2D90864CED7834DE9 /* libPods.a */; };
+		B23937E01B1EAF2D00AA4AA0 /* RemoveAdsIAPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23937DF1B1EAF2D00AA4AA0 /* RemoveAdsIAPModel.swift */; };
+		B23937E21B1EAF3F00AA4AA0 /* PurchaseCoinIAPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23937E11B1EAF3F00AA4AA0 /* PurchaseCoinIAPModel.swift */; };
 		B2B249691B1D8A48004B6481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B249681B1D8A48004B6481 /* AppDelegate.swift */; };
 		B2B2496E1B1D8A48004B6481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2496C1B1D8A48004B6481 /* Main.storyboard */; };
 		B2B249701B1D8A48004B6481 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2496F1B1D8A48004B6481 /* Images.xcassets */; };
@@ -31,6 +33,9 @@
 		0289104E42473C5D66AABBE1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		058D8C1B6F0799E063C43D69 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2B31D2D90864CED7834DE9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21595461B1DB656006F08A5 /* SwiftIAPDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftIAPDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		B23937DF1B1EAF2D00AA4AA0 /* RemoveAdsIAPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAdsIAPModel.swift; sourceTree = "<group>"; };
+		B23937E11B1EAF3F00AA4AA0 /* PurchaseCoinIAPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseCoinIAPModel.swift; sourceTree = "<group>"; };
 		B2B249631B1D8A48004B6481 /* SwiftIAPDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIAPDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B249671B1D8A48004B6481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2B249681B1D8A48004B6481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 		B2B2495A1B1D8A48004B6481 = {
 			isa = PBXGroup;
 			children = (
+				B21595461B1DB656006F08A5 /* SwiftIAPDemo-Bridging-Header.h */,
 				B2B249651B1D8A48004B6481 /* SwiftIAPDemo */,
 				B2B2497B1B1D8A49004B6481 /* SwiftIAPDemoTests */,
 				B2B249641B1D8A48004B6481 /* Products */,
@@ -152,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				B2B2498D1B1D8EC3004B6481 /* IAPModel.swift */,
+				B23937DF1B1EAF2D00AA4AA0 /* RemoveAdsIAPModel.swift */,
+				B23937E11B1EAF3F00AA4AA0 /* PurchaseCoinIAPModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,8 +307,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B2498E1B1D8EC3004B6481 /* IAPModel.swift in Sources */,
+				B23937E21B1EAF3F00AA4AA0 /* PurchaseCoinIAPModel.swift in Sources */,
 				B2B2498C1B1D8C8E004B6481 /* ViewController.swift in Sources */,
 				B2B249691B1D8A48004B6481 /* AppDelegate.swift in Sources */,
+				B23937E01B1EAF2D00AA4AA0 /* RemoveAdsIAPModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,10 +439,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/MRProgress\"",
+				);
 				INFOPLIST_FILE = SwiftIAPDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftIAPDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -443,10 +459,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/MRProgress\"",
+				);
 				INFOPLIST_FILE = SwiftIAPDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftIAPDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};
