@@ -30,12 +30,12 @@ class ViewController: UIViewController {
         self.coinCountLabel.text = "coin count: \(coinCount)"
         
         //去除广告
-        RemoveAdsIAPModel.sharedInstance.startRequest("com.appcookies.AllGuessFreeCn.RemoveAds", requestProductCompletion: { (isRequestSuccess, products) -> Void in
+        RemoveAdsIAPModel.sharedInstance.startRequest("your iap id", requestProductCompletion: { (isRequestSuccess, products) -> Void in
             self.purchaseButton.enabled = isRequestSuccess
             self.removeAdsProduct = products.last as? SKProduct
         })
         //购买金币
-        PurchaseCoinIAPModel.sharedInstance.startRequest("com.appcookies.AllGuessFreeCn.2500Coin", requestProductCompletion: { (isRequestSuccess, products) -> Void in
+        PurchaseCoinIAPModel.sharedInstance.startRequest("your iap id", requestProductCompletion: { (isRequestSuccess, products) -> Void in
             self.purchaseCoinButton.enabled = isRequestSuccess
             self.addCoinProduct = products.last as? SKProduct
         }) 
